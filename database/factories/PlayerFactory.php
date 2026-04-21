@@ -18,7 +18,15 @@ class PlayerFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->name(),
+            'jersey_number' => (string) fake()->numberBetween(0, 99),
+            'preferred_position' => fake()->randomElement([
+                'Guard',
+                'Forward',
+                'Center',
+            ]),
+            'active' => fake()->boolean(80),
+            'notes' => fake()->optional()->sentence(),
         ];
     }
 }
