@@ -57,8 +57,8 @@
                 id="settings"
                 icon="gearshape.fill"
                 label="Settings"
-                :url="route('settings.edit')"
-                :active="request()->routeIs('settings.*')"
+                :url="route('teams.edit')"
+                :active="request()->routeIs('teams.*')"
             />
         </native:bottom-nav>
     </body>
