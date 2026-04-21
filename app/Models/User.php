@@ -45,4 +45,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function currentTeam(): \Illuminate\Database\Eloquent\Model
+    {
+        return Team::current();
+    }
 }
