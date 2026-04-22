@@ -1,5 +1,4 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
     "name": "nativephp/mobile-starter",
     "type": "project",
     "description": "The skeleton application for NativePHP for Mobile.",
@@ -22,6 +21,7 @@
         "laravel/boost": "^2.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "livewire/livewire": "^4.2",
         "nativephp/mobile": "^3.0"
     },
     "require-dev": {
