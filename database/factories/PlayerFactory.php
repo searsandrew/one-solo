@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Player;
+use App\PositionGroup;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -10,22 +11,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PlayerFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $preferredPosition = fake()->optional()->randomElement(PositionGroup::ordered());
+
         return [
             'name' => fake()->name(),
-            'jersey_number' => (string) fake()->numberBetween(0, 99),
-            'preferred_position' => fake()->randomElement([
-                'Guard',
-                'Forward',
-                'Center',
-            ]),
-            'active' => fake()->boolean(80),
+            'jersey_number' => (string) fake()->unique()->numberBetween(1, 99),
+            'preferred_position' => $preferredPosition?->value,
+            'active' => true,
             'notes' => fake()->optional()->sentence(),
         ];
     }

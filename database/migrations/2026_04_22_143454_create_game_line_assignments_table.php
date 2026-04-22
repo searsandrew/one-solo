@@ -12,8 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('game_line_assignments', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->primary();
+            $table->foreignUlid('game_line_id')->constrained()->cascadeOnDelete();
+            $table->string('position');
+            $table->unsignedTinyInteger('slot_number');
+            $table->foreignUlid('player_id')->nullable()->constrained()->nullOnDelete();
             $table->timestamps();
+
+            $table->unique(['game_line_id', 'position', 'slot_number']);
         });
     }
 

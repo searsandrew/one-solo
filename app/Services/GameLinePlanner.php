@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Game;
 use App\Models\GameLine;
+use App\Models\GameLineAssignment;
 use App\Models\Player;
 use App\PositionGroup;
 use Illuminate\Support\Collection;

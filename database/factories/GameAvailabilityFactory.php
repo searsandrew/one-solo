@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Game;
 use App\Models\GameAvailability;
+use App\Models\Player;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -10,15 +12,14 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class GameAvailabilityFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = GameAvailability::class;
+
     public function definition(): array
     {
         return [
-            //
+            'game_id' => Game::factory(),
+            'player_id' => Player::factory(),
+            'is_available' => false,
         ];
     }
 }

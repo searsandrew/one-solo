@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\PositionGroup;
+use Database\Factories\GameLineAssignmentFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,6 +22,9 @@ class GameLineAssignment extends Model
         'position',
         'slot_number',
         'player_id',
+        'outgoing_player_id',
+        'incoming_player_id',
+        'reason',
     ];
 
     /**

@@ -18,13 +18,13 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            'opponent' => fake()->company(),
-            'location' => fake()->optional()->city(),
-            'scheduled_at' => fake()->dateTimeBetween('now', '+3 months'),
-            'players_on_field' => 11,
+            'opponent' => fake()->city().' United',
+            'location' => fake()->optional()->company().' Park',
+            'scheduled_at' => fake()->dateTimeBetween('now', '+30 days'),
+            'players_on_field' => 9,
             'goalkeepers_count' => 1,
-            'defenders_count' => 4,
-            'midfielders_count' => 4,
+            'defenders_count' => 3,
+            'midfielders_count' => 3,
             'forwards_count' => 2,
             'notes' => fake()->optional()->sentence(),
         ];

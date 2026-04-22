@@ -10,15 +10,10 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class TeamFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
-            'team_name' => fake()->words(2, true),
+            'team_name' => 'Soccer Squad',
             'players_on_field' => 9,
             'goalkeepers_count' => 1,
             'defenders_count' => 3,

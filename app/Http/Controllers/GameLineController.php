@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreGameLineRequest;
 use App\Models\Game;
 use App\Models\GameLine;
 use App\Models\Player;
@@ -9,6 +10,7 @@ use App\Services\GameLinePlanner;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 use Illuminate\View\View;
 
 class GameLineController extends Controller

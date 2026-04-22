@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Game;
 use App\Models\GameLine;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -10,15 +11,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class GameLineFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = GameLine::class;
+
     public function definition(): array
     {
         return [
-            //
+            'game_id' => Game::factory(),
+            'line_number' => 1,
+            'label' => 'Line 1',
+            'notes' => fake()->optional()->sentence(),
         ];
     }
 }
