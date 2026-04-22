@@ -34,7 +34,7 @@
         <native:bottom-nav>
             <native:bottom-nav-item
                 id="home"
-                icon="house.fill"
+                icon="{{ \Native\Mobile\Facades\System::isIos() ? 'soccerball' : 'sports_soccer_24' }}"
                 label="Home"
                 :url="route('dashboard')"
                 :active="request()->routeIs('dashboard')"
